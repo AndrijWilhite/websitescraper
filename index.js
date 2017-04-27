@@ -22,11 +22,13 @@ app.get('/scrape', function(req, res){
               title = title.trim();
               author = el.children('.panel-default').children('.panel-body').children('p').text();
               price = el.children('.panel-default').children('.panel-body').children('.green').text();
+              imageURL = el.children('.panel-default').children('.panel-body').children('.img-responsive').attr('src');
               
               data.push({
                   title,
                   author,
-                  price
+                  price,
+                  imageURL
               })
           });
 
